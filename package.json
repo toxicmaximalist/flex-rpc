@@ -83,6 +83,10 @@
     "README.md",
     "LICENSE"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsx watch src/main.ts",
@@ -110,16 +114,16 @@
     "client",
     "typescript"
   ],
-  "author": "",
+  "author": "toxicmaximalist",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/flex-rpc.git"
+    "url": "https://github.com/toxicmaximalist/flex-rpc.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/flex-rpc/issues"
+    "url": "https://github.com/toxicmaximalist/flex-rpc/issues"
   },
-  "homepage": "https://github.com/your-username/flex-rpc#readme",
+  "homepage": "https://github.com/toxicmaximalist/flex-rpc#readme",
   "engines": {
     "node": ">=20.0.0"
   },
