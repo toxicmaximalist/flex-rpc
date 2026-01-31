@@ -8,16 +8,6 @@ Production-ready JSON-RPC 2.0 library for Node.js and Bun with TCP, WebSocket, a
 
 ## Features
 
-- ✅ **Full JSON-RPC 2.0 compliance** - All spec features including batching, notifications, and error codes
-- 🚀 **Multiple transports** - TCP, WebSocket, and HTTP out of the box
-- 🔄 **Bidirectional** - Server-to-client notifications (TCP & WebSocket)
-- 📦 **TypeScript-first** - Strict types with full inference
-- 🎯 **Typed proxy** - Call methods like `api.math.add(1, 2)`
-- 🔌 **Middleware** - Interceptors for logging, auth, validation
-- ⏱️ **Timeouts & Retries** - Built-in request timeouts with abort support
-- 🔁 **Auto-reconnect** - Exponential backoff for WebSocket/TCP clients
-- 🛡️ **Security** - Message size limits, rate limiting ready
-- 🏃 **Minimal dependencies** - Only `ws` for WebSocket support
 
 ## Installation
 
@@ -317,8 +307,6 @@ try {
 
 ## Runtime Support
 
-- **Node.js**: 20+ (LTS)
-- **Bun**: Latest
 
 ## API Reference
 
@@ -328,10 +316,6 @@ See the [full API documentation](./docs/api.md) for complete details.
 
 Check out the [examples](./examples) directory:
 
-- [TCP Basic](./examples/tcp-basic.ts)
-- [WebSocket Chat](./examples/websocket-chat.ts)
-- [HTTP Server](./examples/http-server.ts)
-- [Typed Proxy](./examples/typed-proxy.ts)
 
 ## License
 

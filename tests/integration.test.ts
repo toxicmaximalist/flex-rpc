@@ -139,9 +139,9 @@ describe("TCP Server Bidirectional", () => {
   });
 
   afterEach(async () => {
-    // Server first to avoid sending to closed connections
-    await server.close();
+    // Close client first to avoid unhandled rejection when server closes
     await client.close();
+    await server.close();
     // Small delay for cleanup
     await new Promise((resolve) => setTimeout(resolve, 10));
   });

@@ -272,14 +272,18 @@ export class RpcServer {
       // Only send response for requests (not notifications)
       if (isRequest && id !== undefined) {
         const response = createSuccessResponse(id, result);
-        await client.send(response);
+        await client.send(response).catch(() => {
+          // Client disconnected before response was sent - this is normal
+        });
       }
     } catch (error) {
       // Only send error response for requests
       if (isRequest && id !== undefined) {
         const rpcError = wrapError(error);
         const response = createErrorResponse(id, rpcError.code, rpcError.message, rpcError.data);
-        await client.send(response);
+        await client.send(response).catch(() => {
+          // Client disconnected before error response was sent - this is normal
+        });
       }
     }
   }
