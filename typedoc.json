@@ -1,0 +1,24 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "tsconfig": "tsconfig.json",
+  "out": "docs_site",
+  "includeVersion": true,
+  "exclude": ["**/__tests__/**", "**/examples/**", "**/node_modules/**", "**/*.test.ts"],
+  "theme": "default",
+  "readme": "README.md",
+  "name": "flex-rpc",
+  "navigationLinks": {
+    "GitHub": "https://github.com/your-username/flex-rpc"
+  },
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeInternal": true,
+  "categorizeByGroup": true,
+  "sort": ["source-order"],
+  "visibilityFilters": {
+    "protected": true,
+    "inherited": true,
+    "external": false
+  }
+}

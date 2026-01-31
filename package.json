@@ -1,20 +1,148 @@
 {
   "name": "flex-rpc",
-  "module": "./src/main.ts",
-  "version": "1.0.1",
+  "version": "0.1.0",
+  "description": "Production-ready JSON-RPC 2.0 library for Node.js and Bun with TCP, WebSocket, and HTTP transports",
   "type": "module",
-  "devDependencies": {
-    "bun-types": "latest"
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./client": {
+      "import": {
+        "types": "./dist/client/index.d.ts",
+        "default": "./dist/client/index.js"
+      },
+      "require": {
+        "types": "./dist/client/index.d.cts",
+        "default": "./dist/client/index.cjs"
+      }
+    },
+    "./server": {
+      "import": {
+        "types": "./dist/server/index.d.ts",
+        "default": "./dist/server/index.js"
+      },
+      "require": {
+        "types": "./dist/server/index.d.cts",
+        "default": "./dist/server/index.cjs"
+      }
+    },
+    "./transport/tcp": {
+      "import": {
+        "types": "./dist/transport/tcp/index.d.ts",
+        "default": "./dist/transport/tcp/index.js"
+      },
+      "require": {
+        "types": "./dist/transport/tcp/index.d.cts",
+        "default": "./dist/transport/tcp/index.cjs"
+      }
+    },
+    "./transport/ws": {
+      "import": {
+        "types": "./dist/transport/ws/index.d.ts",
+        "default": "./dist/transport/ws/index.js"
+      },
+      "require": {
+        "types": "./dist/transport/ws/index.d.cts",
+        "default": "./dist/transport/ws/index.cjs"
+      }
+    },
+    "./transport/http": {
+      "import": {
+        "types": "./dist/transport/http/index.d.ts",
+        "default": "./dist/transport/http/index.js"
+      },
+      "require": {
+        "types": "./dist/transport/http/index.d.cts",
+        "default": "./dist/transport/http/index.cjs"
+      }
+    },
+    "./errors": {
+      "import": {
+        "types": "./dist/errors/index.d.ts",
+        "default": "./dist/errors/index.js"
+      },
+      "require": {
+        "types": "./dist/errors/index.d.cts",
+        "default": "./dist/errors/index.cjs"
+      }
+    }
   },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "dev": "bun run ./src/main.ts",
-    "start:dev": "bun --watch ./src/main.ts"
+    "build": "tsup",
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test:run",
+    "docs:clean": "rm -rf docs_site",
+    "docs:build": "typedoc",
+    "docs:serve": "npx serve docs_site",
+    "docs:local": "npm run docs:clean && npm run docs:build && npm run docs:serve"
+  },
+  "keywords": [
+    "json-rpc",
+    "rpc",
+    "json-rpc-2.0",
+    "tcp",
+    "websocket",
+    "http",
+    "api",
+    "server",
+    "client",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/flex-rpc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/flex-rpc/issues"
+  },
+  "homepage": "https://github.com/your-username/flex-rpc#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/ws": "^8.5.10",
+    "@vitest/coverage-v8": "^1.2.0",
+    "fast-check": "^3.15.0",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typedoc": "^0.25.7",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
   },
   "dependencies": {
-    "inversify": "^6.0.1",
-    "reflect-metadata": "^0.1.13"
+    "ws": "^8.16.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   }
 }

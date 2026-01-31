@@ -1,22 +1,35 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "composite": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "outDir": "./dist",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "strict": true,
-    "downlevelIteration": true,
-    "skipLibCheck": true,
-    "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
-  }
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }
